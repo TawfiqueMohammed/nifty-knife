@@ -114,7 +114,7 @@ const AddReviews = () => {
                                 </label>
                             </div>
 
-                            <input className='btn btn-primary text-white' type="submit" value="Add Review" />
+                            <input className='btn btn-primary text-primary' type="submit" value="Add Review" />
                         </form>
                     </div>
                 </div>

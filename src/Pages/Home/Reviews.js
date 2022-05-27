@@ -33,7 +33,7 @@ const Reviews = () => {
                 }
             </div>
             <div className='mb-12 text-center'>
-                <button className='btn btn-primary text-white' onClick={() => handleShowmore()}>Show More Reviews</button>
+                <button className='btn btn-primary text-primary' onClick={() => handleShowmore()}>Show More Reviews</button>
             </div>
         </div>
     );

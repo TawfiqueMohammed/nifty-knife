@@ -4,11 +4,11 @@ const singleReviewNav = (props) => {
 
     const { userName, name, email, description, _id, img, star } = props.review;
     return (
-        <div className="flex gap-4 w-96 bg-amber-200 shadow-xl py-4 px-4 border-solid border-4 border-amber-600">
+        <div className="flex gap-4 w-96 shadow-xl py-4 px-4 ">
 
             <div className="avatar">
                 <div className="w-24 rounded mx-auto mb-6">
-                    <img src={img} />
+                    <img src={img} alt='person'></img>
                 </div>
             </div>
             <div className='grid grid-cols-1 justify-content-center align-items-center single-review'>

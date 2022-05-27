@@ -152,7 +152,7 @@ const UpdateProduct = () => {
                             </div>
 
                             <div className='grid justify-start'>
-                                <input className='btn btn-secondary text-white' type="submit" value="Update" />
+                                <input className='btn btn-secondary text-primary' type="submit" value="Update" />
                             </div>
 
                         </form>

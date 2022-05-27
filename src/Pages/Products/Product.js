@@ -24,7 +24,7 @@ const Product = ({ availableProduct, setProduct }) => {
                 <p><b>Minimum Order Quantity:</b> {minimumQuantity}</p>
                 <p><b>Price:</b> ${price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary text-white bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary" onClick={() => gotoPurchase(`/purchase/${_id}`)}>Buy Now</button>
+                    <button className="btn btn-primary text-primary bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary" onClick={() => gotoPurchase(`/purchase/${_id}`)}>Buy Now</button>
                 </div>
             </div>
         </div>
@@ -65,11 +65,11 @@ export default Product;
 //                 <p><small>Quantity: {quantity}</small></p>
 //                 <p><small>Minimum Order Quantity: {minimumQuantity}</small></p>
 //                 <div className="card-actions justify-center">
-//                     <label className='btn btn-primary text-white' onClick={() => navigateToServiceDetail(_id)}
+//                     <label className='btn btn-primary text-primary' onClick={() => navigateToServiceDetail(_id)}
 //                     // htmlFor="booking-modal"
 //                     // disabled={slots.length === 0}
 //                     // onClick={() => setTreatment(service)}
-//                     // className="btn btn-sm btn-secondary text-white uppercase bg-gradient-to-r from-secondary to-primary"
+//                     // className="btn btn-sm btn-secondary text-primary uppercase bg-gradient-to-r from-secondary to-primary"
 //                     >Purchase: {name}</label>
 //                 </div>
 //             </div>

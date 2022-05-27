@@ -199,7 +199,7 @@ const AddProducts = () => {
                             </div>
 
                             <div className='grid justify-start'>
-                                <input className='btn btn-secondary text-white' type="submit" value="Add Product" />
+                                <input className='btn btn-secondary text-primary' type="submit" value="Add Product" />
                             </div>
 
                         </form>

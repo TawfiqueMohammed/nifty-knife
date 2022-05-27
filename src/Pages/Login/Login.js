@@ -98,7 +98,7 @@ const Login = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs text-primary' type="submit" value="Login" />
                     </form>
                     <p><small>New to Nifty Knife? <Link className='text-blue-400 hover:font-bold' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>

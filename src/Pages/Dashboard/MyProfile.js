@@ -95,14 +95,16 @@ const MyProfile = () => {
     return (
         <div className=' min-h-screen '>
             <div className="left-add">
-                <div className="text-primary text-2xl font-bold ">Update Profile</div>
+                <div className="text-primary text-center text-2xl font-bold ">Update Profile</div>
 
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 align-center gap-4 my-8 justify-around">
                 <div className="card w-96 mx-auto bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={newUser[0]?.img} alt="" className="rounded-xl" />
-                    </figure>
+                    <div className='flex justify-center'>
+                        <figure className="px-10 pt-10 w-1/2">
+                            <img src={newUser[0]?.img} alt="" className="rounded-xl" />
+                        </figure>
+                    </div>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Name: {newUser[0]?.name}</h2>
                         <h2 className="card-title">email: {newUser[0]?.email}</h2>
@@ -199,7 +201,7 @@ const MyProfile = () => {
                             </label>
                         </div>
 
-                        <input className='btn btn-primary text-white' type="submit" value="Update" />
+                        <input className='btn btn-primary text-primary' type="submit" value="Update" />
                     </form>
                 </div>
 

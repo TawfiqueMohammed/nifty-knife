@@ -42,7 +42,7 @@ const SingleProduct = (props) => {
             </td>
             <td>
                 {
-                    !paid ? <Link to={`/dashboard/payment/${props.product._id}`}><button className='btn btn-xs btn-success text-white'>Pay</button></Link>
+                    !paid ? <Link to={`/dashboard/payment/${props.product._id}`}><button className='btn btn-xs btn-success text-primary'>Pay</button></Link>
                         : <div><h4 className='card__title'>Payment: <span className='text-success'>Paid</span></h4><p>Transaction ID : <span className='text-success'>{transactionId}</span></p></div>
 
                 }
