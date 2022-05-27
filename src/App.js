@@ -4,8 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './Pages/Shared/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
-import Login from './Pages/Login/Login';
-import SignUp from './Pages/Login/SignUp';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Blogs from './Pages/Blogs/Blogs';
 import NotFound from './Pages/Shared/NotFound';
@@ -14,7 +12,6 @@ import ContactUs from './Pages/Home/ContactUs';
 import Products from './Pages/Products/Products';
 import ReviewsNav from './Pages/Reviews/ReviewsNav';
 import UpdateProduct from './Pages/Dashboard/UpdateProduct';
-import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Products/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AllOrders from './Pages/Dashboard/AllOrders';
@@ -24,8 +21,11 @@ import Users from './Pages/Dashboard/Users';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyReviews from './Pages/Dashboard/MyReviews';
 import MyOrders from './Pages/Dashboard/MyOrders';
-import RequireAdmin from './Pages/Login/RequireAdmin';
 import Payment from './Pages/Dashboard/Payment';
+import Login from './Pages/Login/Login';
+import Signup from './Pages/Login/Signup';
+import RequireAuth from './Pages/Login/RequireAuth';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/reviews' element={<ReviewsNav></ReviewsNav>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/products' element={<Products></Products>}></Route>
 
         <Route path='/contactus' element={<ContactUs></ContactUs>}></Route>

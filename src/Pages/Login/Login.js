@@ -1,115 +1,124 @@
-import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
-import { useForm } from "react-hook-form";
-import Loading from '../Shared/Loading';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import useToken from '../../hooks/useToken';
+import Loading from '../Shared/Loading';
+import auth from '../../firebase.init';
+import SocialLogin from './Social Login/SocialLogin'
 
 const Login = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
-
-    const [token] = useToken(user || gUser);
-
-    let signInError;
+    const emailRef = useRef("");
+    const passwordRef = useRef("");
     const navigate = useNavigate();
     const location = useLocation();
+    const [email, setEmail] = useState('');
+    const [student, setStudent] = useState([]);
+
+
     let from = location.state?.from?.pathname || "/";
+    let errorElement = <></>;
+
+    const eventSetEmail = (event) => {
+        setEmail(event.target.value);
+    }
+
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     useEffect(() => {
-        if (token) {
-            navigate(from, { replace: true });
-        }
-    }, [token, from, navigate])
+        fetch(`https://fierce-refuge-65339.herokuapp.com/users?email=${user?.email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => setStudent(data))
+    }, [user])
 
-    if (loading || gLoading) {
+
+    const [token] = useToken(user);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    if (loading) {
         return <Loading></Loading>
     }
 
-    if (error || gError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    if (token) {
+        navigate(from, { replace: true });
     }
 
-    const onSubmit = data => {
-        signInWithEmailAndPassword(data.email, data.password);
-    }
+    const EventSubmit = async (event) => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
 
+        await signInWithEmailAndPassword(email, password);
+    };
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email !== "") {
+            await sendPasswordResetEmail(email);
+            toast("Email Sent");
+        } else {
+            toast.error("please enter your email address", {
+                theme: "colored",
+            });
+        }
+    };
+    if (error) {
+        errorElement = <div className='my-3'>
+            <p className="text-danger"> {error?.message}</p>
+        </div>
+    }
     return (
-        <div className='flex h-screen justify-center items-center'>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
 
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
+            <div class="card w-96 bg-base-100 shadow-xl my-10 mx-auto">
+                <div class="container-login">
+
+
+                    <form onSubmit={EventSubmit} class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Login</h2>
+                        <div className="input-group mb-0 w-75 mx-auto form-control">
+                            <label htmlFor='email' className="label">
                                 <span className="label-text">Email</span>
+
                             </label>
-                            <input
-                                type="email"
-                                placeholder="Your Email"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("email", {
-                                    required: {
-                                        value: true,
-                                        message: 'Email is Required'
-                                    },
-                                    pattern: {
-                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                        message: 'Provide a valid Email'
-                                    }
-                                })}
-                            />
-                            <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                            </label>
+                            <input onBlur={eventSetEmail} className='input input-bordered w-full max-w-xs' ref={emailRef} type="email" name="email" id='email' required />
                         </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
+                        <div className="input-group w-75 mx-auto form-control">
+                            <label htmlFor='password' className="label">
                                 <span className="label-text">Password</span>
+
                             </label>
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("password", {
-                                    required: {
-                                        value: true,
-                                        message: 'Password is Required'
-                                    },
-                                    minLength: {
-                                        value: 6,
-                                        message: 'Must be 6 characters or longer'
-                                    }
-                                })}
-                            />
-                            <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                            </label>
+                            <input ref={passwordRef} className='input input-bordered w-full max-w-xs' type="password" name="password" id='password' />
                         </div>
 
-                        {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                        <input className='btn btn-primary w-full text-white' type="submit" required value="Login" />
+                        <button className='btn btn-primary w-full text-white' onClick={resetPassword}>Reset Password</button>
+
                     </form>
-                    <p><small>New to Nifty Knife? <Link className='text-blue-400 hover:font-bold' to="/signup">Create New Account</Link></small></p>
-                    <div className="divider">OR</div>
-                    <button
-                        onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
-                    >Continue with Google</button>
+                    {errorElement}
+                    <p className='my-3 fs-5 text-center'>
+                        New User? <Link className='form-link' to='/signup'><span className='text-primary '>Sign Up</span></Link>
+                    </p>
+                    <SocialLogin></SocialLogin>
+
                 </div>
+
+
+
             </div>
         </div >
     );
+
 };
 
 export default Login;
+
+
