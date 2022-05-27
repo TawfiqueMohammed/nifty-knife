@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({ user, refetch, index }) => {
     const { name, email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +27,7 @@ const UserRow = ({ user, refetch, index }) => {
     }
 
     const removeAdmin = () => {
-        fetch(`http://localhost:5000/user/removeAdmin/${email}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/user/removeAdmin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

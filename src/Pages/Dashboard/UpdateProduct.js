@@ -10,7 +10,7 @@ const UpdateProduct = () => {
 
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/products?id=${id}`)
+        fetch(`https://fierce-refuge-65339.herokuapp.com/products?id=${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -45,7 +45,7 @@ const UpdateProduct = () => {
                         img: img
                     }
                     console.log(product);
-                    fetch(`http://localhost:5000/products/${id}`, {
+                    fetch(`https://fierce-refuge-65339.herokuapp.com/products/${id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json',

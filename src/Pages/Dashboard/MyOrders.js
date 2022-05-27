@@ -13,12 +13,12 @@ const MyOrders = () => {
     const [deleteOrder, setdeleteOrder] = useState(null);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/orders?email=${user?.email}`)
+    //     fetch(`https://fierce-refuge-65339.herokuapp.com/orders?email=${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => setProducts(data));
     // }, [user])
 
-    const { data: products, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders?email=${user?.email}`,
+    const { data: products, isLoading, refetch } = useQuery('orders', () => fetch(`https://fierce-refuge-65339.herokuapp.com/orders?email=${user?.email}`,
         {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

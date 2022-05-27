@@ -13,7 +13,7 @@ const ManageIndividualOrders = (props) => {
             name, description, price, totalPrice, quantity, productCode, img, status: 'Shipped', userName, address, phone, email
         }
 
-        fetch(`http://localhost:5000/orders?id=${_id}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/orders?id=${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const ManageIndividualOrders = (props) => {
 
             })
 
-        // fetch(`http://localhost:5000/orders`, {
+        // fetch(`https://fierce-refuge-65339.herokuapp.com/orders`, {
         //     method: 'GET',
         //     headers: {
         //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`

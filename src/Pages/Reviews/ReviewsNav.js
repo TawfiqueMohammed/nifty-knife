@@ -5,7 +5,7 @@ import SingleReviewNav from './SingleReviewNav';
 const ReviewsNav = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/reviews`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

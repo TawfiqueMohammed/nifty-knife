@@ -14,7 +14,7 @@ const AddReviews = () => {
     const [user, loading] = useAuthState(auth);
     const [newUser, setNewUser] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/users?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -44,7 +44,7 @@ const AddReviews = () => {
             description: data.description
         }
 
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/reviews`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -6,7 +6,7 @@ const DeleteIndividualItem = ({ deleteItem, setDeleteItem, refetch }) => {
     const { _id, name, price, quantity } = deleteItem;
 
     const deleteProduct = () => {
-        const url = `http://localhost:5000/products?id=${_id}`;
+        const url = `https://fierce-refuge-65339.herokuapp.com/products?id=${_id}`;
         fetch(url, {
             method: 'DELETE'
         })

@@ -9,7 +9,7 @@ const SingleProduct = (props) => {
 
 
     const deleteProduct = () => {
-        const url = `http://localhost:5000/orders?id=${_id}`;
+        const url = `https://fierce-refuge-65339.herokuapp.com/orders?id=${_id}`;
         fetch(url, {
             method: 'DELETE'
         })

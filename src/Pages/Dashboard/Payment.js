@@ -15,7 +15,7 @@ const stripePromise = loadStripe('pk_test_51L2fC3L2pDnG4c3S9ZegRSSPyTOLwgorC8pIp
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://fierce-refuge-65339.herokuapp.com/orders/${id}`;
     const { data: orders, isLoading } = useQuery(['orders', id], () => fetch(url, {
         method: 'GET',
         headers: {

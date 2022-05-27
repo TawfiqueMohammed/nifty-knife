@@ -18,7 +18,7 @@ const Purchase = () => {
 
     const [newUser, setNewUser] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/users?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -30,7 +30,7 @@ const Purchase = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/products?&id=${id}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/products?&id=${id}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -40,7 +40,7 @@ const Purchase = () => {
             .then(data => setProducts(data))
     }, [])
     // console.log(products);
-    const url = `http://localhost:5000/products?&id=${id}`;
+    const url = `https://fierce-refuge-65339.herokuapp.com/products?&id=${id}`;
     const { data: item, isLoading } = useQuery(['products', id], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -100,7 +100,7 @@ const Purchase = () => {
             img: item[0].img,
         }
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -114,7 +114,7 @@ const Purchase = () => {
                 toast.success('Order Placed');
             });
 
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://fierce-refuge-65339.herokuapp.com/products/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

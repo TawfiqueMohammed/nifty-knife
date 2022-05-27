@@ -40,7 +40,7 @@ const AddProducts = () => {
                         img: img
                     }
                     console.log(products);
-                    fetch(`http://localhost:5000/products?productname=${data.name}`, {
+                    fetch(`https://fierce-refuge-65339.herokuapp.com/products?productname=${data.name}`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -10,7 +10,7 @@ const ManageProducts = () => {
     // const [products, setProducts] = useState([]);
     const [deleteItem, setDeleteItem] = useState(null);
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/products`, {
+    //     fetch(`https://fierce-refuge-65339.herokuapp.com/products`, {
     //         method: 'GET',
     //         headers: {
     //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -20,7 +20,7 @@ const ManageProducts = () => {
     //         .then(data => setProducts(data))
     // }, [])
 
-    const { data: products, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/products', {
+    const { data: products, isLoading, refetch } = useQuery('users', () => fetch('https://fierce-refuge-65339.herokuapp.com/products', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
