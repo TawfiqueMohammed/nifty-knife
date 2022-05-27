@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Hunting Knife",
+        "price": 199,
+        "description": "KA-BAR BK2 Becker Campanion Fixed 5-1/4 Blade, Zytel Handles, Molded Plastic Sheath",
+        "minimumQuantity": 10,
+        "quantity": 200,
+        "img": "https://img.freepik.com/free-photo/closeup-shot-sharp-army-knife_181624-14878.jpg?size=626&ext=jpg"
+    },
+    {
+        "name": "Kitchen Knife",
+        "price": 99,
+        "description": "Morakniv Mora of Sweden Companion Spark Fixed Blade Knife",
+        "minimumQuantity": 10,
+        "quantity": 200,
+        "img": "https://img.freepik.com/free-photo/steel-kitchen-knives_105428-703.jpg?size=626&ext=jpg"
+    },
+    {
+        "name": "Fixed Blade Knife",
+        "price": 299,
+        "description": "We carry a wide variety of fixed blade knives which are designed for camping and survival. From machetes for clearing brush to the multi-talented survival knives",
+        "minimumQuantity": 10,
+        "quantity": 200,
+        "img": "https://img.freepik.com/free-photo/closeup-shot-small-sharp-army-knife-with-black-handle-black-table_181624-14810.jpg?size=626&ext=jpg"
+    },
+    {
+        "name": "Condor Tool & Knife",
+        "price": 150,
+        "description": "Condor Tool & Knife CTK3950-4.2HC Bushglider Fixed Blade Knife",
+        "minimumQuantity": 10,
+        "quantity": 200,
+        "img": "https://img.freepik.com/free-photo/closeup-shot-fixed-sharp-knife-black-background_181624-17592.jpg?size=626&ext=jpg"
+    },
+    {
+        "name": "Machetes",
+        "price": 369,
+        "description": "The special made Columbia River CRKT Machetes",
+        "minimumQuantity": 10,
+        "quantity": 200,
+        "img": "https://img.freepik.com/free-photo/cleaver-knife-wooden-board_1387-603.jpg?size=626&ext=jpg"
+    },
+    {
+        "name": "Karambits",
+        "price": 299,
+        "description": "Cold Steel 39FKS Double Agent I Karambit 3 Serrated Blade, Grivory Grip",
+        "minimumQuantity": 10,
+        "quantity": 200,
+        "img": "https://img.freepik.com/free-photo/closeup-shot-edc-pocket-knife-with-black-holder_181624-9117.jpg?size=626&ext=jpg"
+    }
+]
