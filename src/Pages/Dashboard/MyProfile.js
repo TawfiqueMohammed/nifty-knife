@@ -201,7 +201,7 @@ const MyProfile = () => {
                             </label>
                         </div>
 
-                        <input className='btn btn-primary text-primary' type="submit" value="Update" />
+                        <input className='btn btn-primary text-white' type="submit" value="Update" />
                     </form>
                 </div>
 

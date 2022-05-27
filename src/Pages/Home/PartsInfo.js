@@ -24,7 +24,7 @@ const Product = ({ availableProduct, setProduct }) => {
                 <p><b>Minimum Order Quantity:</b> {minimumQuantity}</p>
                 <p><b>Price:</b> ${price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary text-primary bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary" onClick={() => gotoPurchase(`/purchase/${_id}`)}>Buy Now</button>
+                    <button className="btn btn-primary text-white bg-gradient-to-r from-primary to-secondary hover:from-primary hover:to-secondary" onClick={() => gotoPurchase(`/purchase/${_id}`)}>Buy Now</button>
                 </div>
             </div>
         </div>

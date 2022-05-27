@@ -72,7 +72,7 @@ const AddProducts = () => {
             <div className="">
                 <div className="container-add">
                     <div className="left-add">
-                        <div className="text-2xl font-bold text-primary m-3">Add Products</div>
+                        <div className="text-2xl text-center font-bold text-primary m-3">Add Products</div>
                     </div>
 
                     <div className=" grid align-center justify-center mx-auto my-4">

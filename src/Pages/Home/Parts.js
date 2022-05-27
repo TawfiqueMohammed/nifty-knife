@@ -37,7 +37,7 @@ const Parts = () => {
                 }
             </div>
             <div className='mb-12 text-center'>
-                <button className='btn btn-primary text-center text-primary' onClick={() => handleShowmore()}>Show More Products</button>
+                <button className='btn btn-primary text-center text-white' onClick={() => handleShowmore()}>Show More Products</button>
             </div>
         </div>
     );

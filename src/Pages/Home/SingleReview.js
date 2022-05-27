@@ -15,7 +15,7 @@ const SingleReview = (props) => {
                 <h1><b>User Name:</b>{userName}</h1>
 
                 <p><b>Ratings:</b>{star}</p>
-                <p className='text-center'><b>Review:</b> {description}</p>
+                <p className=''><b>Review:</b> {description}</p>
             </div>
         </div>
     );

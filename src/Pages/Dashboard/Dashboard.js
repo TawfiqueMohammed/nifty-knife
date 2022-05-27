@@ -19,23 +19,23 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side ">
                 <label for="dashboard-sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content text-primary">
+                <ul className="menu p-4 overflow-y-auto w-48 bg-base-100  text-primary bg-primary">
                     {/* <!-- Sidebar content here --> */}
-                    <li className=''><Link to="/dashboard">My Profile</Link></li>
+                    <li className='text-white'><Link to="/dashboard">My Profile</Link></li>
                     {
                         !admin && <>
-                            <li className='text-primary'><Link to="/dashboard/myOrders">My Orders</Link></li>
-                            <li className='text-primary'><Link to="/dashboard/review">Add a Review</Link></li>
+                            <li className='text-white'><Link to="/dashboard/myOrders">My Orders</Link></li>
+                            <li className='text-white'><Link to="/dashboard/review">Add a Review</Link></li>
                         </>
                     }
 
 
                     {
                         admin && <>
-                            <li className='text-primary'><Link to="/dashboard/allOrders">All Orders</Link></li>
-                            <li className='text-primary'><Link to="/dashboard/addProduct">Add Product</Link></li>
-                            <li className='text-primary'><Link to="/dashboard/manageProducts">Manage Products</Link></li>
-                            <li className='text-primary'><Link to="/dashboard/users">Users</Link></li>
+                            <li className='text-white'><Link to="/dashboard/allOrders">All Orders</Link></li>
+                            <li className='text-white'><Link to="/dashboard/addProduct">Add Product</Link></li>
+                            <li className='text-white'><Link to="/dashboard/manageProducts">Manage Products</Link></li>
+                            <li className='text-white'><Link to="/dashboard/users">Users</Link></li>
                         </>
                     }
 

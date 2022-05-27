@@ -64,7 +64,7 @@ const AddReviews = () => {
     // }
     return (
         <div>
-            <h2 className='text-2xl font bold text-primary'>Add a review</h2>
+            <h2 className='text-2xl text-center font bold text-primary'>Add a review</h2>
             <div className="page-add">
                 <div className="container-add">
 
@@ -114,7 +114,7 @@ const AddReviews = () => {
                                 </label>
                             </div>
 
-                            <input className='btn btn-primary text-primary' type="submit" value="Add Review" />
+                            <input className='btn btn-primary text-white' type="submit" value="Add Review" />
                         </form>
                     </div>
                 </div>
