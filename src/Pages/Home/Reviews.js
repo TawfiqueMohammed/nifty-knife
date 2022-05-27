@@ -26,8 +26,8 @@ const Reviews = () => {
 
     return (
         <div >
-            <h1 className='text-center text-4xl font-bold text-primary mb-4 mx-auto'>User Reviews</h1>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 pb-28 px-12'>
+            <h1 className='text-center text-4xl font-bold text-primary m-4 mx-auto'>User Reviews</h1>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 pb-28 px-12 pt-5'>
                 {
                     reviews?.slice(0, 3).map(review => <SingleReview key={review._id} review={review}></SingleReview>)
                 }
