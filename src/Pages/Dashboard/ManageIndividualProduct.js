@@ -28,7 +28,7 @@ const ManageIndividualProduct = (props) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>{minimumQuantity}</td>
-            <td><button className='btn btn-primary text-primary' variant="primary" onClick={() => goTo()}>
+            <td><button className='btn btn-primary text-white' variant="primary" onClick={() => goTo()}>
                 Update Product
             </button></td>
             <td><label onClick={() => setDeleteItem(props.product)} for="my-modal-6" className="btn btn-xs btn-error">Delete</label></td>
