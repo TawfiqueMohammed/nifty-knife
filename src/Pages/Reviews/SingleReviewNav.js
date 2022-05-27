@@ -13,10 +13,10 @@ const singleReviewNav = (props) => {
             </div>
             <div className='grid grid-cols-1 justify-content-center align-items-center single-review'>
 
-                <h1><b>User Name:</b>{userName}</h1>
+                <h1><b>User Name: </b>{userName}</h1>
 
-                <p><b>Ratings:</b>{star}</p>
-                <p className=''><b>Review:</b> {description}</p>
+                <p><b>Ratings: </b>{star}</p>
+                <p className=''><b>Review: </b> {description}</p>
             </div>
         </div>
     );

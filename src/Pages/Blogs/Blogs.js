@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <h2 className='text-xl bg-primary rounded-xl py-5 m-3 font-bold text-center text-'>Question And Answer</h2>
+            <h2 className='text-xl bg-secondary rounded-xl py-5 m-3 font-bold text-center text-black'>Question And Answer</h2>
 
 
             <div className="card card-bordered card-compact bg-slate-300 py-3 m-3">
