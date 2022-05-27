@@ -1,18 +1,46 @@
-# Getting Started with Create React App
+# [Nifty Knife](https://assignment-12-973ad.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Livesite Link : [Nifty Knife](https://assignment-12-973ad.web.app/).
 
-## Available Scripts
+Client site github link : [https://github.com/programming-hero-web-course1/manufacturer-website-client-side-TawfiqueMohammed]
 
-In the project directory, you can run:
+Server site github link : [https://github.com/programming-hero-web-course1/manufacturer-website-server-side-TawfiqueMohammed]
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Admin ID and Password :
+
+admin: a@gmail.com
+password: 123456
+
+## Website functionalities description 
+
+In the website , you can run:
+
+ * User can buy a product and pay for that using cards.
+ * User can review for products and reviews will be shown in home page .
+ * User can sign up using gmail or create account using email and password .
+ * User can see the state of their products and also their transaction id  .
+ * User can update their profile as well as admin .
+ * Admin can add product , update a product , delete product .
+ * They can see all orders and state of the order whether paid or not .
+ * An admin can make a user admin and also can remove him from admin .
+ * Admin can update their profile .
+ 
+## Technology used
+
+ * Tailwind css
+ * Daisy Ui
+ * React js
+ * Firebase authentication 
+ * Stripe
+ * Img bb
+ * React router 
+ * Toastify
+ * React form
+ * React Query
+ * React Icons 
+
 
 ### `npm test`
 
